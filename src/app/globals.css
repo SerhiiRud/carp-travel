@@ -2,32 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .hero-bg-mob {
+    /* background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      url(/images/hero-bg-320.jpg);
+    background-image:
+      linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      -webkit-image-set(url(/images/hero-bg-320.jpg) 1x, url(/images/hero-bg-320@2x.jpg)
+            2x); */
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/hero-bg-320.jpg) 1x,
+        url(/images/hero-bg-320@2x.jpg) 2x
+      );
+  }
+  .hero-bg-tab {
+    /* background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      url(/images/hero-bg-768.jpg);
+    background-image:
+      linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      -webkit-image-set(url(/images/hero-bg-768.webp) type('image/webp') 1x, url(/images/hero-bg-768@2x.webp)
+            type('image/webp') 2x, url(/images/hero-bg-768.jpg) 1x, url(/images/hero-bg-768@2x.jpg)
+            2x); */
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        /* url(/images/hero-bg-768.webp) type('image/webp') 1x,
+        url(/images/hero-bg-768@2x.webp) type('image/webp') 2x, */
+          url(/images/hero-bg-768.jpg) 1x,
+        url(/images/hero-bg-768@2x.jpg) 2x
+      );
+  }
+  .hero-bg-desk {
+    /* background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      url(/images/hero-bg-1280.jpg);
+    background-image:
+      linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      -webkit-image-set(url(/images/hero-bg-1280.webp) type('image/webp') 1x, url(/images/hero-bg-1280@2x.webp)
+            type('image/webp') 2x, url(/images/hero-bg-1280.jpg) 1x, url(/images/hero-bg-1280@2x.jpg)
+            2x); */
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        /* url(/images/hero-bg-1280.webp) type('image/webp') 1x,
+        url(/images/hero-bg-1280@2x.webp) type('image/webp') 2x, */
+          url(/images/hero-bg-1280.jpg) 1x,
+        url(/images/hero-bg-1280@2x.jpg) 2x
+      );
+  }
+  .hero {
+    @apply hero-bg-mob md:hero-bg-tab xl:hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */

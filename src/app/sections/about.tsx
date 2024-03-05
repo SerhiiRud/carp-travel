@@ -3,5 +3,9 @@ import React from 'react';
 export interface AboutProps {}
 
 export default function About({}: AboutProps) {
-  return <div>About</div>;
+  return (
+    <section id="about" className="h-96">
+      About
+    </section>
+  );
 }

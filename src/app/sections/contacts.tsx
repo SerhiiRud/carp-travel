@@ -3,5 +3,9 @@ import React from 'react';
 export interface ContactsProps {}
 
 export default function Contacts({}: ContactsProps) {
-  return <div>Contacts</div>;
+  return (
+    <section id="contacts" className="h-96">
+      Contacts
+    </section>
+  );
 }
