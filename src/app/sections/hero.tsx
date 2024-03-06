@@ -7,7 +7,7 @@ export default function Hero({}: HeroProps) {
   return (
     <section id="hero" className="hero pt-28 h-96">
       <p>7 DAYS JOURNEY</p>
-      <h1>UNCOVER CARPATHIAN&#39;S SECRETS</h1>
+      <h1 className="text-white text-5xl">UNCOVER CARPATHIAN&#39;S SECRETS</h1>
       <p>
         Hoverla / Yaremche / Zakarpattia / Vorokhta / Synevyr Lake / Bukovel
       </p>

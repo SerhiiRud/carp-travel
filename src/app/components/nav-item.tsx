@@ -4,14 +4,16 @@ import { Link as ScrollLink } from 'react-scroll';
 export interface NavItemProps {
   pathName: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
-export default function NavItem({ pathName, children }: NavItemProps) {
+export default function NavItem({ pathName, children, onClick }: NavItemProps) {
   return (
-    <li className="text-sm text-white">
+    <li className="text-white">
       <ScrollLink
         to={pathName}
         href={pathName}
+        onClick={onClick}
         spy={true}
         smooth={true}
         duration={1500}

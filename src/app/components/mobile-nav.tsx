@@ -1,26 +1,34 @@
-import React from 'react';
+import { Dispatch, SetStateAction } from 'react';
+import Modal from './modal';
 import NavItem from './nav-item';
 import Button from './button';
 
-export interface MobileNavProps {}
+export interface MobileNavProps {
+  onCloseModal: () => void;
+}
 const navItems = ['About', 'Services', 'Career', 'Gallery', 'Contacts'];
 
-export default function MobileNav({}: MobileNavProps) {
+export default function MobileNav({ onCloseModal }: MobileNavProps) {
   return (
-    <nav className="flex">
-      <div className="w-50 h-50">
-        <ul>
+    <Modal>
+      <div className="text-right">
+        <Button onClick={onCloseModal}>CLOSE</Button>
+      </div>
+      <nav className="pt-[110px]">
+        <ul className="flex flex-col gap-12 items-center">
           {navItems.map((item, i) => (
-            <NavItem key={i} pathName={item.toLowerCase()}>
-              {item}
+            <NavItem
+              key={i}
+              pathName={item.toLowerCase()}
+              onClick={onCloseModal}
+            >
+              <div className="text-lg tracking-widest leading-tight">
+                {item}
+              </div>
             </NavItem>
           ))}
         </ul>
-      </div>
-
-      <div className="md:hidden">
-        <Button>Close</Button>
-      </div>
-    </nav>
+      </nav>
+    </Modal>
   );
 }
