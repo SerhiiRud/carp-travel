@@ -9,7 +9,7 @@ export interface NavItemProps {
 
 export default function NavItem({ pathName, children, onClick }: NavItemProps) {
   return (
-    <li className="text-white">
+    <li className="text-white hover:underline ">
       <ScrollLink
         to={pathName}
         href={pathName}

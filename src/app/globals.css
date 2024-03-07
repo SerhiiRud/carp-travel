@@ -5,11 +5,26 @@
 @tailwind utilities;
 
 @layer components {
+  .container {
+    padding: 10px;
+  }
+
+  .modal {
+    backdrop-filter: blur(50px);
+    background-image: linear-gradient(
+      rgba(1, 10, 5, 0.75),
+      rgba(1, 10, 5, 0.75)
+    );
+  }
+  .backdrop {
+    background-image: linear-gradient(rgba(1, 10, 5, 0.5), rgba(1, 10, 5, 0.5));
+  }
+
   .hero-bg-mob {
     background-image: linear-gradient(
         180deg,
-        rgb(0, 24, 38),
-        rgba(0, 37, 49, 0) 100%
+        rgba(2, 15, 8, 0.5),
+        rgba(2, 15, 8, 0.5)
       ),
       image-set(
         url(/images/hero-bg-320.jpg) 1x,
@@ -31,17 +46,62 @@
       );
   }
   .hero {
-    @apply hero-bg-mob md:hero-bg-tab xl:hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+    @apply hero-bg-mob md:hero-bg-tab xl:hero-bg-desk relative bg-cover bg-center;
   }
 
-  .modal {
-    backdrop-filter: blur(50px);
-    background-image: linear-gradient(
-      rgba(1, 10, 5, 0.75),
-      rgba(1, 10, 5, 0.75)
-    );
+  .hero-button {
+    width: 100%;
+    height: 53px;
+    background:
+      linear-gradient(to right, #fff 1px, transparent 1px) 0 0,
+      linear-gradient(to right, #fff 1px, transparent 1px) 0 100%,
+      linear-gradient(to left, #fff 1px, transparent 1px) 100% 0,
+      linear-gradient(to left, #fff 1px, transparent 1px) 100% 100%,
+      linear-gradient(to bottom, #fff 1px, transparent 1px) 0 0,
+      linear-gradient(to bottom, #fff 1px, transparent 1px) 100% 0,
+      linear-gradient(to top, #fff 1px, transparent 1px) 0 100%,
+      linear-gradient(to top, #fff 1px, transparent 1px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.5s linear;
   }
-  .backdrop {
-    background-image: linear-gradient(rgba(1, 10, 5, 0.5), rgba(1, 10, 5, 0.5));
+  .hero-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  @media (min-width: 1280px) {
+    .hero-button {
+      height: 70px;
+    }
+  }
+
+  .about-bg-mob {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/about-bg-320.jpg) 1x,
+        url(/images/about-bg-320@2x.jpg) 2x
+      );
+  }
+  .about-bg-tab {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/about-bg-768.jpg) 1x,
+        url(/images/about-bg-768@2x.jpg) 2x
+      );
+  }
+  .about-bg-desk {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/about-bg-1280.jpg) 1x,
+        url(/images/about-bg-1280@2x.jpg) 2x
+      );
+  }
+
+  .about {
+    @apply about-bg-mob md:about-bg-tab xl:about-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
+
+  .container {
+    outline: 1px solid red;
   }
 }
