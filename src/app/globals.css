@@ -6,7 +6,7 @@
 
 @layer components {
   .container {
-    padding: 10px;
+    outline: 1px solid red;
   }
 
   .modal {
@@ -99,9 +99,5 @@
 
   .about {
     @apply about-bg-mob md:about-bg-tab xl:about-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
-  }
-
-  .container {
-    outline: 1px solid red;
   }
 }

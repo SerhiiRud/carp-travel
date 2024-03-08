@@ -9,7 +9,7 @@ export interface HeroProps {}
 export default function Hero({}: HeroProps) {
   return (
     <Section id="hero">
-      <div className="sm:container mx-auto mt-14 z-10 flex h-full flex-col justify-between md:grid md:grid-cols-[auto,250px] md:grid-rows-2 md:gap-x-[24px] xl:grid-cols-[auto,370px] text-white ">
+      <div className="mt-[50px] md:mt-20 xl:mt-[42px] flex h-full flex-col justify-between md:grid md:grid-cols-[auto,250px] md:grid-rows-2 md:gap-x-[24px] xl:grid-cols-[auto,430px] text-white ">
         <HeroTag />
         <h1 className="mb-6 self-start text-4xl uppercase md:col-start-1 md:row-start-1 md:text-[67px] md:leading-[81px] xl:text-[98px] xl:leading-[119px]  ">
           Uncover <br />
@@ -40,6 +40,7 @@ export default function Hero({}: HeroProps) {
             JOIN NOW
           </ScrollLink>
         </div>
+        {/* </div> */}
       </div>
     </Section>
   );
