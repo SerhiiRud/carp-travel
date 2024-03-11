@@ -100,4 +100,30 @@
   .about {
     @apply about-bg-mob md:about-bg-tab xl:about-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
+
+  .career-bg-mob {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/career-bg-320.jpeg) 1x,
+        url(/images/career-bg-320@2x.jpeg) 2x
+      );
+  }
+  .career-bg-tab {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/career-bg-768.jpeg) 1x,
+        url(/images/career-bg-768@2x.jpeg) 2x
+      );
+  }
+  .career-bg-desk {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/career-bg-1280.jpeg) 1x,
+        url(/images/career-bg-1280@2x.jpeg) 2x
+      );
+  }
+
+  .career {
+    @apply career-bg-mob md:career-bg-tab xl:career-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
 }
