@@ -6,7 +6,7 @@ export interface LogoProps {}
 export default function Logo({}: LogoProps) {
   return (
     <a href="/">
-      <Image src="/icons/logo.svg" alt="logo" width={66} height={31} />
+      <Image src="/icons/logo.svg" alt="logo" width={61} height={22} />
     </a>
   );
 }
