@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
 import Modal from './modal';
 import NavItem from './nav-item';
 import Button from './button';

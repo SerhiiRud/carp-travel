@@ -6,8 +6,6 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-
-  /* Center slide text vertically */
   display: flex;
   color: transparent;
   justify-content: center;
@@ -40,8 +38,6 @@
     transform: translateY(-50%) rotate(45deg);
   }
 }
-
-/* //------------------- */
 
 .gallerySwiper.swiper {
   height: 294px;

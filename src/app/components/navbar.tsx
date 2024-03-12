@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import NavItem from './nav-item';
 import Button from './button';
 import MobileNav from './mobile-nav';

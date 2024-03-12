@@ -1,6 +1,6 @@
 'use client';
-import React, { useState } from 'react';
-import { useForm, SubmitHandler, ValidationRule } from 'react-hook-form';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -8,25 +8,11 @@ import * as yup from 'yup';
 import FormInput from './form-input';
 import { Inputs } from './form-input';
 
-// export type ContactsInputs = {
-//   //required: boolean;
-//   // pattern?: ValidationRule<RegExp>;
-//   name: string;
-//   email: string;
-//   // position?: string;
-//   // phone?: string;
-//   message?: string;
-//   // checked?: boolean;
-// };
-
 const schema = yup
   .object({
     name: yup.string().required(),
     email: yup.string().required(),
-    // position: yup.string(),
-    // phone: yup.string(),
     message: yup.string(),
-    // checked: yup.bool(),
   })
   .required();
 

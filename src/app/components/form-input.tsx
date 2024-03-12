@@ -1,7 +1,5 @@
 import React from 'react';
 import { FieldErrors, UseFormRegister, ValidationRule } from 'react-hook-form';
-// import { CareerInputs } from './career-form';
-// import { ContactsInputs } from './contacts-form';
 
 export interface FormInputProps {
   required: boolean;
@@ -15,8 +13,6 @@ export interface FormInputProps {
 }
 
 export type Inputs = {
-  // required: boolean;
-  // pattern?: ValidationRule<RegExp>;
   name: string;
   email: string;
   position?: string;
