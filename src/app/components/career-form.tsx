@@ -1,29 +1,43 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, ValidationRule } from 'react-hook-form';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-// import CheckedIcon from '/icons/checked.svg';
-// import UnCheckedIcon from '/icons/unchecked.svg';
+import FormInput from './form-input';
+import { Inputs } from './form-input';
 
-export type CareerFormType = {
-  fullname: string;
-  email: string;
-  position: string;
-  phone: string;
-  message: string;
-  checked: boolean;
-};
+// export type CareerInputs = {
+//   // required: boolean;
+//   // pattern?: ValidationRule<RegExp>;
+//   name: string;
+//   email: string;
+//   position?: string;
+//   phone?: string;
+//   message?: string;
+//   checked?: boolean;
+// };
+// const schema = yup
+//   .object({
+//     name: yup.string().required(),
+//     email: yup.string().required(),
+//     position: yup.string().required(),
+//     phone: yup.string().required(),
+//     message: yup.string(),
+//     checked: yup.bool().required(),
+//   })
+//   .required();
 
 const schema = yup
   .object({
-    fullname: yup.string().required(),
+    name: yup.string().required(),
     email: yup.string().required(),
-    position: yup.string().required(),
-    phone: yup.string().required(),
-    message: yup.string().required(),
-    checked: yup.bool().required(),
+    position: yup.string(),
+    phone: yup.string(),
+    message: yup.string(),
+    checked: yup.bool(),
   })
   .required();
 
@@ -33,6 +47,7 @@ export default function CareerForm() {
   const handleCheckboxChange = () => {
     setChecked(!checked);
   };
+
   const {
     register,
     handleSubmit,
@@ -40,65 +55,64 @@ export default function CareerForm() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: CareerFormType) => console.log(data);
+
+  const onSubmit = (data: Inputs) => {
+    toast('Your data was submitted', {
+      // position: 'top-right',
+      // autoClose: 2000,
+      // theme: 'light',
+    });
+    console.log(data);
+  };
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label
-          className="relative flex flex-col gap-[4px] 
-      md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-1"
-        >
-          <span className="text-[12px] font-200 leading-[2] tracking-[2.4px]">
-            Full name
-          </span>
-          <input
-            {...register('fullname', {
-              required: true,
-              pattern: /^[A-Za-z]+$/i,
-            })}
-            placeholder="John Smith"
-            className="pl-2 text-[13px] font-extralight leading-[1.85] bg-input placeholder:opacity-50 md:text-xl md:leading-[1.2] md:py-1"
-          />
-          <p className="text-[#FF5757] text-[12px] font-200 leading-[2] tracking-[2.4px]">
-            {errors.fullname?.message}
-          </p>
-        </label>
-        <label
-          className="relative flex flex-col gap-[4px] 
-      md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-1"
-        >
-          <span className="text-[12px] font-200 leading-[2] tracking-[2.4px]">
-            E-mail
-          </span>
-          <input
-            {...register('email', {
-              required: true,
-              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-            })}
-            placeholder="johnsmith@email.com"
-            className="pl-2 text-[13px] font-extralight leading-[1.85] bg-input placeholder:opacity-50 md:text-xl md:leading-[1.2] md:py-1"
-          />
-          <p>{errors.email?.message}</p>
-        </label>
-        <label
-          className="relative flex flex-col gap-[4px] 
-      md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-1"
-        >
-          <span className="text-[12px] font-200 leading-[2] tracking-[2.4px]">
-            Position
-          </span>
-          <input
-            {...register('position', {
-              required: true,
-              pattern: /^[A-Za-z]+$/i,
-            })}
-            placeholder="Movie maker"
-            className="pl-2 text-[13px] font-extralight leading-[1.85] bg-input placeholder:opacity-50 md:text-xl md:leading-[1.2] md:py-1"
-          />
-          <p>{errors.position?.message}</p>
-        </label>
-        <label
+      <ToastContainer />
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="text-xs  font-extralight leading-6 tracking-[0.20em] md:grid md:grid-cols-[221px,auto] md:gap-5 xl:block xl:w-1/2"
+      >
+        <FormInput
+          placeholder="John Smith"
+          required={true}
+          textarea={false}
+          label="Full name"
+          name="name"
+          register={register}
+          pattern={/^[A-Za-z]+$/i}
+          errors={errors}
+        />
+        <FormInput
+          placeholder="johnsmith@email.com"
+          required={true}
+          textarea={false}
+          label="Email"
+          name="email"
+          register={register}
+          pattern={/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i}
+          errors={errors}
+        />
+        <FormInput
+          placeholder="John Smith"
+          required={true}
+          textarea={false}
+          label="Movie maker"
+          name="name"
+          register={register}
+          pattern={/^[A-Za-z]+$/i}
+          errors={errors}
+        />
+        <FormInput
+          placeholder="(097) 12 34 567"
+          required={true}
+          textarea={false}
+          label="Phone"
+          name="phone"
+          register={register}
+          pattern={/^\(\d{3}\) \d{2} \d{2} \d{3}$/i}
+          errors={errors}
+        />
+        {/* <label
           className="relative flex flex-col gap-[4px] 
       md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-1"
         >
@@ -114,19 +128,15 @@ export default function CareerForm() {
             className="bg-[rgba(255, 255, 255, 0.2)] pl-2 text-[13px] font-extralight leading-[1.85] bg-input placeholder:opacity-50 md:text-xl md:leading-[1.2] md:py-1"
           />
           <p>{errors.phone?.message}</p>
-        </label>
-        <label
-          className="flex flex-col gap-[4px] 
-      md:col-start-3 md:col-span-1 md:row-start-1 md:row-span-7"
-        >
-          <span className="text-[12px] font-200 leading-[2] tracking-[2.4px]">
-            Message
-          </span>
-          <textarea
-            {...register('message')}
-            className="p-[8px] h-[196px] text-[13px] font-200 leading-[1.85] bg-input placeholder:opacity-50 md:h-full resize-none"
-          />
-        </label>
+        </label> */}
+        <FormInput
+          required={false}
+          textarea={true}
+          label="Message"
+          name="message"
+          register={register}
+          errors={errors}
+        />
         <label
           className="relative flex gap-[8px] 
       md:col-start-1 md:col-span-1 md:row-start-10 md:row-span-2"
@@ -163,12 +173,20 @@ export default function CareerForm() {
           </span>
         </label>
         <button
+          type="submit"
+          className="ml-auto text-[30px] 
+        md:col-start-3 md:col-span-1 md:row-start-9 md:row-span-2"
+          // className="link ml-auto block text-[30px] font-medium leading-9 focus:outline-8 active:outline-2 xl:text-[32px]"
+        >
+          SEND
+        </button>
+        {/* <button
           className="ml-auto text-[30px] 
         md:col-start-3 md:col-span-1 md:row-start-9 md:row-span-2"
           type="submit"
         >
           SEND
-        </button>
+        </button> */}
       </form>
     </>
   );

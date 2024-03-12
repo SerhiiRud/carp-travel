@@ -126,4 +126,68 @@
   .career {
     @apply career-bg-mob md:career-bg-tab xl:career-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
+
+  .careerMobileSection-bg-mob {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/career-bg-320.jpeg) 1x,
+        url(/images/career-bg-320@2x.jpeg) 2x
+      );
+  }
+
+  .careerMobileSection {
+    @apply careerMobileSection-bg-mob md:career-bg-tab xl:career-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
+
+  .gallery-bg-mob {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/gallery-bg-320.jpg) 1x,
+        url(/images/gallery-bg-320@2x.jpg) 2x
+      );
+  }
+  .gallery-bg-tab {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/gallery-bg-768.jpg) 1x,
+        url(/images/gallery-bg-768@2x.jpg) 2x
+      );
+  }
+  .gallery-bg-desk {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/gallery-bg-1280.jpg) 1x,
+        url(/images/gallery-bg-1280@2x.jpg) 2x
+      );
+  }
+
+  .gallery {
+    @apply gallery-bg-mob md:gallery-bg-tab xl:gallery-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
+
+  .contacts-bg-mob {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/contacts-bg-320.jpg) 1x,
+        url(/images/contacts-bg-320@2x.jpg) 2x
+      );
+  }
+  .contacts-bg-tab {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/contacts-bg-768.jpg) 1x,
+        url(/images/contacts-bg-768@2x.jpg) 2x
+      );
+  }
+  .contacts-bg-desk {
+    background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+      image-set(
+        url(/images/contacts-bg-1280.jpg) 1x,
+        url(/images/contacts-bg-1280@2x.jpg) 2x
+      );
+  }
+
+  .contacts {
+    @apply contacts-bg-mob md:contacts-bg-tab xl:contacts-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
 }
