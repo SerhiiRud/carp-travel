@@ -112,23 +112,6 @@ export default function CareerForm() {
           pattern={/^\(\d{3}\) \d{2} \d{2} \d{3}$/i}
           errors={errors}
         />
-        {/* <label
-          className="relative flex flex-col gap-[4px] 
-      md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-1"
-        >
-          <span className="text-[12px] font-200 leading-[2] tracking-[2.4px]">
-            Phone
-          </span>
-          <input
-            {...register('phone', {
-              required: true,
-              pattern: /^\(\d{3}\) \d{2} \d{2} \d{3}$/i,
-            })}
-            placeholder="(097) 12 34 567"
-            className="bg-[rgba(255, 255, 255, 0.2)] pl-2 text-[13px] font-extralight leading-[1.85] bg-input placeholder:opacity-50 md:text-xl md:leading-[1.2] md:py-1"
-          />
-          <p>{errors.phone?.message}</p>
-        </label> */}
         <FormInput
           required={false}
           textarea={true}
@@ -168,25 +151,17 @@ export default function CareerForm() {
             )}
           </div>
 
-          <span className="mt-[2px] text-[12px] font-200 leading-[1.83] md:mt-0">
+          <span className="mt-1 mb-4 text-[12px] font-200 leading-[1.83] md:mt-0">
             I confirm my consent to the processing of personal data.
           </span>
         </label>
         <button
           type="submit"
-          className="ml-auto text-[30px] 
-        md:col-start-3 md:col-span-1 md:row-start-9 md:row-span-2"
+          className="block ml-auto text-[30px] font-medium md:col-start-3 md:col-span-1 md:row-start-9 md:row-span-2"
           // className="link ml-auto block text-[30px] font-medium leading-9 focus:outline-8 active:outline-2 xl:text-[32px]"
         >
           SEND
         </button>
-        {/* <button
-          className="ml-auto text-[30px] 
-        md:col-start-3 md:col-span-1 md:row-start-9 md:row-span-2"
-          type="submit"
-        >
-          SEND
-        </button> */}
       </form>
     </>
   );

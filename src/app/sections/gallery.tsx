@@ -20,27 +20,20 @@ export default function Gallery({}: GalleryProps) {
         <h2 className="relative mb-6 text-4xl uppercase  md:col-start-1 md:row-start-1 md:mb-[75px]  md:self-start md:text-[67px] md:leading-[81px] xl:mb-[28px] xl:text-[98px] xl:leading-[119px]">
           <span className="font-thin">Our </span>Gallery
         </h2>
-        <ul className="block md:hidden ">
-          <Swiper
-            wrapperTag="ul"
-            loop={true}
-            direction="vertical"
-            slidesPerView={3}
-            className="h-[609px]"
-            spaceBetween={24}
-          >
-            {galleryImages.map(({ fileName, title }, index) => (
-              <SwiperSlide key={index} tag="li" className="relative">
-                <Image
-                  src={`/images/${fileName}`}
-                  alt={title}
-                  fill
-                  className="object-cover"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <ul className="flex flex-col gap-[22px] md:hidden ">
+          {galleryImages.slice(0, 3).map(({ fileName, title }, index) => (
+            <li key={index} className="relative">
+              <Image
+                src={`/images/${fileName}`}
+                alt={title}
+                width={606}
+                height={429}
+                className="object-cover"
+              />
+            </li>
+          ))}
         </ul>
+
         <div className="relative hidden md:block ">
           <Swiper
             slidesPerView={3}

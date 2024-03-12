@@ -7,10 +7,7 @@ export interface CareerProps {}
 export default function Career({}: CareerProps) {
   return (
     <Section id="career">
-      <div
-        className="md:grid md:grid-cols-[225px,16px,127px,94px,21px,221px] md:grid-rows-[8px,73px,7px,5px,36px,56px,60px,32px,316px] 
-      lg:px-[24px] lg:grid-cols-[293px,246px,63px,24px,234px,79px,293px] lg:grid-rows-[16px,103px,24px,72px,11px,3px,380px]"
-      >
+      <div className="relative z-10  md:flex md:h-full md:flex-col md:justify-between py-[56px] text-sm md:py-[64px] md:text-base md:leading-5 xl:py-[104px] xl:text-lg xl:leading-6">
         <h2 className="relative mb-6 text-[40px] uppercase  md:col-start-1 md:row-start-1 md:mb-[75px]  md:self-start md:text-[67px] md:leading-[81px] xl:mb-[28px] xl:text-[98px] xl:leading-[119px]">
           <span className="font-thin">CHOOSE </span>US
         </h2>
