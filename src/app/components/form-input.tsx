@@ -46,7 +46,7 @@ export default function FormInput({
           aria-invalid={errors[name] ? 'true' : 'false'}
           id={name}
           placeholder={placeholder}
-          className={`h-[193px] w-full resize-none px-2 py-1.5 text-xl md:h-[221px] xl:h-[174px] ${
+          className={`h-[193px] w-full resize-none px-2 py-1.5 text-xl md:h-[221px] md:w-[221px] md:h-[228px] xl:w-[292px] xl:h-[268px] ${
             errors[name]
               ? 'text-[#FF5757] focus:text-[#FF5757]'
               : 'text-white text-opacity-20 focus:text-white'
@@ -58,7 +58,7 @@ export default function FormInput({
           id={name}
           placeholder={placeholder}
           aria-invalid={errors[name] ? 'true' : 'false'}
-          className={`w-full px-2 py-1.5 text-xl ${
+          className={`w-full px-1 py-1.5 text-xl ${
             errors[name]
               ? 'text-[#FF5757] focus:text-[#FF5757]'
               : 'text-white text-opacity-20 focus:text-white'

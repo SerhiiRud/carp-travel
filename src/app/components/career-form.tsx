@@ -37,9 +37,9 @@ export default function CareerForm() {
 
   const onSubmit = (data: Inputs) => {
     toast('Your data was submitted', {
-      // position: 'top-right',
-      // autoClose: 2000,
-      // theme: 'light',
+      position: 'top-right',
+      autoClose: 2000,
+      theme: 'light',
     });
     console.log(data);
   };
@@ -47,57 +47,53 @@ export default function CareerForm() {
   return (
     <>
       <ToastContainer />
-      {/* <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="text-xs  font-extralight leading-6 tracking-[0.20em] md:grid md:grid-cols-[221px,auto] md:gap-5 xl:block xl:w-1/2"
-      > */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="text-xs  font-extralight leading-6 tracking-[0.20em] md:grid md:grid-cols-[260px,auto] md:gap-5 xl:block xl:w-1/2"
+        className="text-xs  font-extralight leading-6 tracking-[0.20em] md:grid md:grid-cols-2 md:gap-5 "
       >
-        <div className="md:flex">
-          <div>
-            <FormInput
-              placeholder="John Smith"
-              required={true}
-              textarea={false}
-              label="Full name"
-              name="name"
-              register={register}
-              pattern={/^[A-Za-z]+$/i}
-              errors={errors}
-            />
-            <FormInput
-              placeholder="johnsmith@email.com"
-              required={true}
-              textarea={false}
-              label="Email"
-              name="email"
-              register={register}
-              pattern={/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i}
-              errors={errors}
-            />
-            <FormInput
-              placeholder="John Smith"
-              required={true}
-              textarea={false}
-              label="Movie maker"
-              name="name"
-              register={register}
-              pattern={/^[A-Za-z]+$/i}
-              errors={errors}
-            />
-            <FormInput
-              placeholder="(097) 12 34 567"
-              required={true}
-              textarea={false}
-              label="Phone"
-              name="phone"
-              register={register}
-              pattern={/^\(\d{3}\) \d{2} \d{2} \d{3}$/i}
-              errors={errors}
-            />
-          </div>
+        <div className="md:col-start-1">
+          <FormInput
+            placeholder="John Smith"
+            required={true}
+            textarea={false}
+            label="Full name"
+            name="name"
+            register={register}
+            pattern={/^[A-Za-z]+$/i}
+            errors={errors}
+          />
+          <FormInput
+            placeholder="johnsmith@email.com"
+            required={true}
+            textarea={false}
+            label="Email"
+            name="email"
+            register={register}
+            pattern={/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i}
+            errors={errors}
+          />
+          <FormInput
+            placeholder="John Smith"
+            required={true}
+            textarea={false}
+            label="Movie maker"
+            name="name"
+            register={register}
+            pattern={/^[A-Za-z]+$/i}
+            errors={errors}
+          />
+          <FormInput
+            placeholder="(097) 12 34 567"
+            required={true}
+            textarea={false}
+            label="Phone"
+            name="phone"
+            register={register}
+            pattern={/^\(\d{3}\) \d{2} \d{2} \d{3}$/i}
+            errors={errors}
+          />
+        </div>
+        <div className="md:col-start-2">
           <FormInput
             required={false}
             textarea={true}

@@ -7,9 +7,8 @@ export interface CareerProps {}
 export default function Career({}: CareerProps) {
   return (
     <Section id="career">
-      {/* <div className="mx-auto z-10 flex h-full flex-col justify-between md:grid md:auto-rows-auto md:grid-cols-[auto,170px] md:gap-x-[12px] xl:grid-cols-[50%,50%]"> */}
-      <div className="mx-auto z-10 flex h-full flex-col justify-between md:grid md:auto-rows-auto md:grid-cols-3  md:gap-x-[28px] xl:grid-cols-[50%,50%]">
-        <h2 className="mb-6 self-start text-4xl font-thin ">
+      <div className="mx-auto z-10 flex h-full flex-col justify-between md:grid md:auto-rows-auto md:grid-cols-3  md:gap-x-[28px] xl:grid-cols-4">
+        <h2 className="mb-6 self-start text-4xl font-medium ">
           <span className="font-thin">CHOOSE </span>US
         </h2>
         <p className="mb-5 text-sm max-w-[180px] md:col-start-3  md:mb-4 md:max-w-none xl:max-w-[292px]">
@@ -24,7 +23,7 @@ export default function Career({}: CareerProps) {
           WHY US?
         </p>
 
-        <ul className="list-none text-sm font-normal flex flex-col gap-[16px] mr-auto w-[181px] text-end md:w-full md:gap-[24px] md:col-start-1 md:row-start-4">
+        <ul className="list-none text-sm font-normal flex flex-col gap-[16px] mr-auto w-[181px] text-end md:w-full md:gap-[24px] md:col-start-1 md:row-start-4 xl:col-span-2">
           <li className="xl:flex xl:gap-[24px] xl:justify-end">
             <p
               className="mb-[8px] text-[14px] leading-[1.43]  
@@ -94,7 +93,7 @@ export default function Career({}: CareerProps) {
           and join our team!
         </p>
 
-        <div className="sm:hidden md:block md:col-start-2 md:col-span-2 md:row-start-4">
+        <div className="sm:hidden md:block md:col-start-2 md:col-span-2 md:row-start-4 xl:col-start-3">
           <CareerForm />
         </div>
       </div>
