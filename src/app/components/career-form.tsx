@@ -9,27 +9,6 @@ import * as yup from 'yup';
 import FormInput from './form-input';
 import { Inputs } from './form-input';
 
-// export type CareerInputs = {
-//   // required: boolean;
-//   // pattern?: ValidationRule<RegExp>;
-//   name: string;
-//   email: string;
-//   position?: string;
-//   phone?: string;
-//   message?: string;
-//   checked?: boolean;
-// };
-// const schema = yup
-//   .object({
-//     name: yup.string().required(),
-//     email: yup.string().required(),
-//     position: yup.string().required(),
-//     phone: yup.string().required(),
-//     message: yup.string(),
-//     checked: yup.bool().required(),
-//   })
-//   .required();
-
 const schema = yup
   .object({
     name: yup.string().required(),
@@ -68,58 +47,66 @@ export default function CareerForm() {
   return (
     <>
       <ToastContainer />
-      <form
+      {/* <form
         onSubmit={handleSubmit(onSubmit)}
         className="text-xs  font-extralight leading-6 tracking-[0.20em] md:grid md:grid-cols-[221px,auto] md:gap-5 xl:block xl:w-1/2"
+      > */}
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="text-xs  font-extralight leading-6 tracking-[0.20em] md:grid md:grid-cols-[260px,auto] md:gap-5 xl:block xl:w-1/2"
       >
-        <FormInput
-          placeholder="John Smith"
-          required={true}
-          textarea={false}
-          label="Full name"
-          name="name"
-          register={register}
-          pattern={/^[A-Za-z]+$/i}
-          errors={errors}
-        />
-        <FormInput
-          placeholder="johnsmith@email.com"
-          required={true}
-          textarea={false}
-          label="Email"
-          name="email"
-          register={register}
-          pattern={/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i}
-          errors={errors}
-        />
-        <FormInput
-          placeholder="John Smith"
-          required={true}
-          textarea={false}
-          label="Movie maker"
-          name="name"
-          register={register}
-          pattern={/^[A-Za-z]+$/i}
-          errors={errors}
-        />
-        <FormInput
-          placeholder="(097) 12 34 567"
-          required={true}
-          textarea={false}
-          label="Phone"
-          name="phone"
-          register={register}
-          pattern={/^\(\d{3}\) \d{2} \d{2} \d{3}$/i}
-          errors={errors}
-        />
-        <FormInput
-          required={false}
-          textarea={true}
-          label="Message"
-          name="message"
-          register={register}
-          errors={errors}
-        />
+        <div className="md:flex">
+          <div>
+            <FormInput
+              placeholder="John Smith"
+              required={true}
+              textarea={false}
+              label="Full name"
+              name="name"
+              register={register}
+              pattern={/^[A-Za-z]+$/i}
+              errors={errors}
+            />
+            <FormInput
+              placeholder="johnsmith@email.com"
+              required={true}
+              textarea={false}
+              label="Email"
+              name="email"
+              register={register}
+              pattern={/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i}
+              errors={errors}
+            />
+            <FormInput
+              placeholder="John Smith"
+              required={true}
+              textarea={false}
+              label="Movie maker"
+              name="name"
+              register={register}
+              pattern={/^[A-Za-z]+$/i}
+              errors={errors}
+            />
+            <FormInput
+              placeholder="(097) 12 34 567"
+              required={true}
+              textarea={false}
+              label="Phone"
+              name="phone"
+              register={register}
+              pattern={/^\(\d{3}\) \d{2} \d{2} \d{3}$/i}
+              errors={errors}
+            />
+          </div>
+          <FormInput
+            required={false}
+            textarea={true}
+            label="Message"
+            name="message"
+            register={register}
+            errors={errors}
+          />
+        </div>
         <label
           className="relative flex gap-[8px] 
       md:col-start-1 md:col-span-1 md:row-start-10 md:row-span-2"

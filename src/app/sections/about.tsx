@@ -6,7 +6,7 @@ export interface AboutProps {}
 export default function About({}: AboutProps) {
   return (
     <Section id="about">
-      <div className=" mx-auto z-10 flex h-full flex-col justify-between md:grid md:auto-rows-auto md:grid-cols-[auto,220px] md:gap-x-[24px] xl:grid-cols-[50%,50%]">
+      <div className="mx-auto z-10 flex h-full flex-col justify-between md:grid md:auto-rows-auto md:grid-cols-[auto,220px] md:gap-x-[24px] xl:grid-cols-[50%,50%]">
         <h2 className="mb-6 self-start text-4xl font-thin md:col-start-1 md:row-start-1 md:text-[67px] md:leading-[81px] xl:text-[98px] xl:tracking-tight xl:leading-none">
           WHO <span className="font-medium">WE ARE</span>
         </h2>
